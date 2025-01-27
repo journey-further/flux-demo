@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Introduction</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <style>
+        /* Styling specific to the intro page */
+        .non-sticky-header {
+        position: static !important; /* Override the sticky behaviour */
+        }
+        /* Headers (h1, h2, etc.) */
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+            color: #F6B53D; /* Yellow used in dashboard */
+        }
+    
+        /* Paragraphs and general text content */
+        p {
+            font-family: 'Merriweather Sans', sans-serif;
+            color: #FFFFFF; /* White for body content */
+            line-height: 1.6; /* Improve readability */
+            font-weight: 300; /* Lighter font weight */
+            text-align: justify; /* Justify the text */
+        }
+    
+        /* Blocks for each section */
+        .block {
+            background-color: #323447; /* Same block background as dashboard */
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            width: 100%; /* Full width of the container */
+        }
+    
+        /* Container padding */
+        .content {
+            padding: 15px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header-section non-sticky-header">
+            <h1>Dashboard Introduction</h1>
+            <p>Flux is a unique way to measure changes in Google search results, filtering out the noise to score SERP changes based on recent history.</p>
+            <br>
+            <p>Unlike generic visibility metrics, Flux provides a tailored analysis grounded in your tracked campaign keywords, giving you your own personal SERP barometer.</p>
+            <p>Sometimes significant changes align with Google core updates or shifts in search features. At other times, changes happen naturally as websites drop in and out of competition, reflecting the organic ebb and flow of the SERPs.</p>
+            <br>
+            <p>We use a <b>flux score</b> to demonstrate this flow. This is a normalised value which keeps it easy to read, and simple to comprehend.</p>
+            <p>High scores on a given day reflect significant activity, while lower scores indicate a more stable landscape.</p>
+            <p><b>Flux points</b> are similar to traditional visibility scores, where more points indicate that a domain or search feature is more prominent.</p>
+            <br>
+            <p>Explore Flux by using the category and device filter buttons to see how different niches have evolved over time. Whether you're analysing desktop or mobile trends, Flux reveals a deeper understanding of SERP dynamics and competition in your niche.</p>
+        </div>
+        <br>
+        <hr>
+        <div class="content">
+            <div class="row">
+                <div class="block">
+                    <h2>Flux Score Chart</h2>
+                    <p>The Flux Score chart offers a long-term view of fluctuations in search rankings. This visualisation helps identify major shifts at the keyword category level, making it easy to spot patterns over time. Key algorithm updates and significant events are labelled to provide additional context, helping you correlate score spikes with industry-wide changes.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="block">
+                    <h2>Flux Wheel</h2>
+                    <p>The Flux Wheel is a unique visualisation that captures the magnitude of day-on-day SERP changes. Each particle represents a domain, and its position relative to the central ring shows its change in visibility: <b>the further from the ring, the more significant the positive or negative change.</b></p>
+                    <br>
+                    <p>This visualisation focuses on domain-level changes for desktop or mobile, highlighting shifts in overall prominence. Days are represented clockwise, and key ranking update days are marked with solid lines for quick reference.</p>
+                    <br>
+                    <p>For now, this visualisation is locked to an overall assessent of top domains, split by desktop and mobile SERPs.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="block">
+                    <h2>Top Search Features</h2>
+                    <p>The Top Search Features chart tracks the prevalence of search features over time. By analysing these trends, you can identify shifts in the types of results dominating the SERPs, such as shopping carousels, featured snippets, or video results.</p>
+                    <br>
+                    <p>This chart helps you understand how changes in search features align with significant Google updates. For example, a sudden increase in shopping carousels might coincide with an update that prioritises transactional search intent.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="block">
+                    <h2>Top Domains</h2>
+                    <p>The Top Domains chart highlights the most prominent websites in your niche, based on their visibility. This chart provides a quick overview of domain performance and reveals if any major players have entered or exited the top rankings.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="block">
+                    <h2>Top Winners and Losers</h2>
+                    <p>The Winners and Losers tables showcase the top 100 domains with the greatest weekly visibility changes. Gains and losses are calculated week-on-week, reflecting shifts since the dashboard's most recent update.</p>
+                    <br>
+                    <p>These tables help identify trends and anomalies at a glance. A sudden visibility gain might indicate a successful campaign or a new content strategy, while a drop could suggest a penalty or loss of ranking due to increased competition.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

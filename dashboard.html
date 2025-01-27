@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flux Demo Dashboard</title>
+    <link rel="stylesheet" href="/flux-demo/styles/styles.css">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/6.5.8/browser/pixi.min.js"></script>
+    <script src="/flux-demo/scripts/scripts.js"></script>
+    <script>
+        const googleUpdates = [
+            { date: "2024-12-19", name: "December spam update" },
+            { date: "2024-12-12", name: "December core update" },
+            { date: "2024-11-11", name: "November core update" },
+            { date: "2024-08-15", name: "August core update" }
+        ];
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header-section">
+            <h1>Flux Dashboard v2</h1>
+            <p>Concept of a non-looker studio dashboard. A brief overview of what these charts are and how they're made are available if you'd like to <a href="/flux-demo/intro.html" class="intro-link" target="_blank">learn about the dashboard</a></p>
+            <style>
+                .intro-link {
+                  color: #F6B53D; /* Set the link color */
+                  text-decoration: none; /* Remove underline */
+                }
+              
+                .intro-link:hover {
+                  color: #E08AB2; /* Slightly darker pink for hover effect */
+                  text-decoration: underline; /* Optional: Add underline on hover */
+                }
+              </style>
+        </div>
+        <div class="tooltip" style="position: absolute; background: white; padding: 5px; border: 1px solid #ccc; border-radius: 5px; display: none;"></div>
+        <div class="toggle-section">
+            <div class="toggle-row">
+                <div id="category-buttons-container"></div>
+                <button id="toggle-control">Current Device: Mobile</button>
+            </div>
+        </div>
+             
+        <div class="content">
+            <div class="row row-1">
+                <div class="block-1">
+                    <h3 class="block-title">Flux Score Chart</h3>
+                        <script>
+                            document.addEventListener("DOMContentLoaded", () => {
+                                createFluxChart(".block-1", "flux_data.json", currentDevice, googleUpdates);
+                            });
+                        </script>
+                </div>
+                <div class="block-2">
+                <h3 class="block-title">Flux Wheel</h3>
+                </div>      
+            </div>
+            <div class="top_performers">
+                <div class="block block-search-features">
+                    <h3 class="block-title">Top Search Features</h3>
+                    <div id="search-features-chart"></div>
+                </div>
+                <div class="block block-top-domains">
+                    <h3 class="block-title">Top Domains</h3>
+                    <div id="top_domains_chart"></div>
+                </div>
+            </div>
+            <div class="row row-4">
+                <div class="block">
+                    <h3>Top Winners</h3>
+                    <div class="scrollable-table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Domain</th>
+                                    <th>Point Change</th>
+                                    <th>Percent Change</th>
+                                </tr>
+                            </thead>
+                            <tbody id="top-winners-table-body">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="block">
+                    <h3>Top Losers</h3>
+                    <div class="scrollable-table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Domain</th>
+                                    <th>Point Change</th>
+                                    <th>Percent Change</th>
+                                </tr>
+                            </thead>
+                            <tbody id="top-losers-table-body">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
