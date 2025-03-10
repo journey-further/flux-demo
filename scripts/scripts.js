@@ -31,16 +31,32 @@ function drawChart() {
     if (!filteredData.length) return;
   
     filteredData.forEach((row, i) => {
-      const particle = new PIXI.Graphics();
-      particle.beginFill(0x15CAB6, 0.75).drawCircle(0, 0, 0.75).endFill();
-  
-      const adjustedTheta = currentTheta[i] - Math.PI / 2;
-      const r = baseRadius + row.avg_delta * scaleFactor;
-      particle.x = centerX + Math.cos(adjustedTheta) * r;
-      particle.y = centerY + Math.sin(adjustedTheta) * r;
-  
-      chaosParticles.addChild(particle);
-    });
+        const particle = new PIXI.Graphics();
+        
+        // Compute a normalized value (0 to 1)
+        let t = i / (filteredData.length - 1);
+
+        // Interpolate between the start and end colours.
+        let interpolatedColor = d3.interpolateRgb("#15CAB6", "#ffffff")(t);
+
+        // Convert the interpolated color string to a d3.rgb object
+        let colorObj = d3.rgb(interpolatedColor);
+
+        // Create a hex number from the rgb components
+        let hexColor = (colorObj.r << 16) | (colorObj.g << 8) | colorObj.b;
+
+        particle.beginFill(hexColor, 0.75)
+        .drawCircle(0, 0, 0.75)
+        .endFill();
+
+        // const adjustedTheta = currentTheta[i] + Math.PI;
+        // const r = baseRadius + row.avg_delta * scaleFactor;
+        // particle.x = centerX + Math.cos(adjustedTheta) * r;
+        // particle.y = centerY + Math.sin(adjustedTheta) * r;
+        
+        chaosParticles.addChild(particle);
+      });
+      
   
     // Draw lines for googleUpdates, etc.
     googleUpdates.forEach(({ date }) => {
@@ -73,7 +89,14 @@ function drawChart() {
       return;
     }
   
-    currentTheta = d3.range(0, 2 * Math.PI, (2 * Math.PI) / filteredData.length);
+    // Instead of starting at 0, start at -π/2 (or whichever offset you want).
+    // So that the first angle is -π/2, and the last angle is 2π - π/2
+    currentTheta = d3.range(
+        -Math.PI / 2,
+        2 * Math.PI - Math.PI / 2,
+        (2 * Math.PI) / filteredData.length
+    );
+
     drawChart();
   }
   
