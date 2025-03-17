@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flux Demo Dashboard</title>
-    <link rel="stylesheet" href="/flux-demo/styles/styles.css">
+    <title>Dashboard Layout</title>
+    <link rel="stylesheet" href="/styles/styles.css">
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/6.5.8/browser/pixi.min.js"></script>
-    <script src="/flux-demo/scripts/scripts.js"></script>
+    <script src="/scripts/scripts.js"></script>
     <script>
         const googleUpdates = [
             { date: "2024-12-19", name: "December spam update" },
             { date: "2024-12-12", name: "December core update" },
             { date: "2024-11-11", name: "November core update" },
-            { date: "2024-08-15", name: "August core update" }
+            { date: "2024-08-15", name: "August core update" },
+            { date: "2025-03-13", name: "March core update" }
         ];
     </script>
 </head>
@@ -21,18 +22,7 @@
     <div class="container">
         <div class="header-section">
             <h1>Flux Dashboard v2</h1>
-            <p>Concept of a non-looker studio dashboard. A brief overview of what these charts are and how they're made are available if you'd like to <a href="/flux-demo/intro.html" class="intro-link" target="_blank">learn about the dashboard</a></p>
-            <style>
-                .intro-link {
-                  color: #F6B53D; /* Set the link color */
-                  text-decoration: none; /* Remove underline */
-                }
-              
-                .intro-link:hover {
-                  color: #E08AB2; /* Slightly darker pink for hover effect */
-                  text-decoration: underline; /* Optional: Add underline on hover */
-                }
-              </style>
+            <p>Concept of a non-looker studio dashboard. Charts built with d3.js</p>
         </div>
         <div class="tooltip" style="position: absolute; background: white; padding: 5px; border: 1px solid #ccc; border-radius: 5px; display: none;"></div>
         <div class="toggle-section">
@@ -53,7 +43,7 @@
                         </script>
                 </div>
                 <div class="block-2">
-                <h3 class="block-title">Flux Wheel</h3>
+                <h3 class="block-title">Chaos Wheel</h3>
                 </div>      
             </div>
             <div class="top_performers">
